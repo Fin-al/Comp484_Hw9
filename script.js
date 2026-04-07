@@ -8,10 +8,10 @@ let formattedDay = day < 10 ? "0" + day : day;
 
 document.getElementById("dateOutput").textContent = "Today is " + formattedMonth + "/" + formattedDay + "/" + year;
 
-let val1 = "67";
-let val2 = "134";
-let val3 = "19.87";
-let val4 = "greetings";
+let val1 = "85";
+let val2 = "92";
+let val3 = "78.5";
+let val4 = "absent";
 
 let num1 = Number(val1);
 let num2 = Number(val2);
@@ -33,20 +33,20 @@ if (Number.isNaN(num4)) {
 
 document.getElementById("numberConversionOutput").innerHTML = conversionHTML;
 
-let itemPrice = 20.00;
-let taxAmount = 1.50;
-let quantity = 2;
+let score1 = 90;
+let score2 = 85;
+let score3 = 72;
 
-let subtotal = itemPrice + taxAmount;
-let total = subtotal * quantity;
+let totalScore = score1 + score2 + score3;
+let averageScore = totalScore / 3;
 
-let mathResults = "Addition: $" + itemPrice.toFixed(2) + " + $" + taxAmount.toFixed(2) + " = $" + subtotal.toFixed(2);
-mathResults += " | Multiplication: $" + subtotal.toFixed(2) + " * " + quantity + " = $" + total.toFixed(2);
+let mathResults = "Addition: " + score1 + " + " + score2 + " + " + score3 + " = Total Score: " + totalScore;
+mathResults += " | Division: " + totalScore + " / 3 = Average Score: " + averageScore.toFixed(2);
 
-if (total > 30) {
-    mathResults += "<p>The total of $" + total.toFixed(2) + " is greater than 30.</p>";
+if (averageScore >= 70) {
+    mathResults += "<p>The average of " + averageScore.toFixed(2) + " is Passing.</p>";
 } else {
-    mathResults += "<p>The total of $" + total.toFixed(2) + " is 30 or less.</p>";
+    mathResults += "<p>The average of " + averageScore.toFixed(2) + " is Not passing.</p>";
 }
 
 document.getElementById("mathOutput").innerHTML = mathResults;
