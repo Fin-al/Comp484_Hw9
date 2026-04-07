@@ -11,7 +11,7 @@ document.getElementById("dateOutput").textContent = "Today is " + formattedMonth
 let val1 = "67";
 let val2 = "134";
 let val3 = "19.87";
-let val4 = "greetings";
+let val4 = "greeting";
 
 let num1 = Number(val1);
 let num2 = Number(val2);
