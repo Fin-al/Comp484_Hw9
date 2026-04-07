@@ -8,10 +8,10 @@ let formattedDay = day < 10 ? "0" + day : day;
 
 document.getElementById("dateOutput").textContent = "Today is " + formattedMonth + "/" + formattedDay + "/" + year;
 
-let val1 = "42";
-let val2 = "100";
-let val3 = "19.75";
-let val4 = "hello";
+let val1 = "67";
+let val2 = "134";
+let val3 = "19.87";
+let val4 = "greetings";
 
 let num1 = Number(val1);
 let num2 = Number(val2);
@@ -26,9 +26,9 @@ let res4 = "Original: '" + val4 + "' -> Converted: " + num4 + " -> isNaN: " + Nu
 let conversionHTML = res1 + "<br>" + res2 + "<br>" + res3 + "<br>" + res4;
 
 if (Number.isNaN(num4)) {
-    conversionHTML += "<br>">+val4+"<p> This value is not a valid number.</p>";
+    conversionHTML += "<p>The value '" + val4 + "' is not a valid number.</p>";
 } else {
-    conversionHTML += "<br>"+val4+"<p> This value is a valid number.</p>";
+    conversionHTML += "<p>All values are valid.</p>";
 }
 
 document.getElementById("numberConversionOutput").innerHTML = conversionHTML;
@@ -40,13 +40,13 @@ let quantity = 2;
 let subtotal = itemPrice + taxAmount;
 let total = subtotal * quantity;
 
-let mathResults = "Price ($" + itemPrice.toFixed(2) + ") + Tax ($" + taxAmount.toFixed(2) + ") = Subtotal: $" + subtotal.toFixed(2);
-mathResults += " | Subtotal multiplied by Quantity (" + quantity + ") = Total: $" + total.toFixed(2);
+let mathResults = "Addition: $" + itemPrice.toFixed(2) + " + $" + taxAmount.toFixed(2) + " = $" + subtotal.toFixed(2);
+mathResults += " | Multiplication: $" + subtotal.toFixed(2) + " * " + quantity + " = $" + total.toFixed(2);
 
 if (total > 30) {
-    mathResults += " (This total is greater than 30)";
+    mathResults += "<p>The total of $" + total.toFixed(2) + " is greater than 30.</p>";
 } else {
-    mathResults += " (This total is 30 or less)";
+    mathResults += "<p>The total of $" + total.toFixed(2) + " is 30 or less.</p>";
 }
 
-document.getElementById("mathOutput").textContent = mathResults;
+document.getElementById("mathOutput").innerHTML = mathResults;
