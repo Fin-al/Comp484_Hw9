@@ -1,17 +1,12 @@
-const now = new Date();
-let month = (now.getMonth() + 1).toString();
-let day = now.getDate().toString();
-let year = now.getFullYear();
+const currentDate = new Date();
+let month = currentDate.getMonth() + 1;
+let day = currentDate.getDate();
+let year = currentDate.getFullYear();
 
-if (month.length < 2) {
-    month = "0" + month;
-}
-if (day.length < 2) {
-    day = "0" + day;
-}
+let formattedMonth = month < 10 ? "0" + month : month;
+let formattedDay = day < 10 ? "0" + day : day;
 
-const dateString = "Today is " + month + "/" + day + "/" + year;
-document.getElementById("dateOutput").textContent = dateString;
+document.getElementById("dateOutput").textContent = "Today is " + formattedMonth + "/" + formattedDay + "/" + year;
 
 let val1 = "42";
 let val2 = "100";
@@ -28,27 +23,30 @@ let res2 = "Original: '" + val2 + "' -> Converted: " + num2 + " -> isNaN: " + Nu
 let res3 = "Original: '" + val3 + "' -> Converted: " + num3 + " -> isNaN: " + Number.isNaN(num3) + " -> isInteger: " + Number.isInteger(num3);
 let res4 = "Original: '" + val4 + "' -> Converted: " + num4 + " -> isNaN: " + Number.isNaN(num4) + " -> isInteger: " + Number.isInteger(num4);
 
-let nanMessage = "";
+let conversionHTML = res1 + "<br>" + res2 + "<br>" + res3 + "<br>" + res4;
+
 if (Number.isNaN(num4)) {
-    nanMessage = "<br>This value is not a valid number.";
-}
-
-document.getElementById("numberConversionOutput").innerHTML = res1 + "<br>" + res2 + "<br>" + res3 + "<br>" + res4 + nanMessage;
-
-let itemPrice = 29.99;
-let taxRate = 0.08;
-let shippingFee = 5.50;
-
-let taxTotal = itemPrice * taxRate;
-let grandTotal = itemPrice + taxTotal + shippingFee;
-
-let mathResults = "Subtotal: $" + itemPrice.toFixed(2) + " | Tax: $" + taxTotal.toFixed(2) + " | Total: $" + grandTotal.toFixed(2);
-
-let shippingMessage = "";
-if (grandTotal > 35) {
-    shippingMessage = " (Free Shipping Applied)";
+    conversionHTML += "<br>">+val4+"<p> This value is not a valid number.</p>";
 } else {
-    shippingMessage = " (Standard Shipping Rates)";
+    conversionHTML += "<br>"+val4+"<p> This value is a valid number.</p>";
 }
 
-document.getElementById("mathOutput").textContent = mathResults + shippingMessage;
+document.getElementById("numberConversionOutput").innerHTML = conversionHTML;
+
+let itemPrice = 20.00;
+let taxAmount = 1.50;
+let quantity = 2;
+
+let subtotal = itemPrice + taxAmount;
+let total = subtotal * quantity;
+
+let mathResults = "Price ($" + itemPrice.toFixed(2) + ") + Tax ($" + taxAmount.toFixed(2) + ") = Subtotal: $" + subtotal.toFixed(2);
+mathResults += " | Subtotal multiplied by Quantity (" + quantity + ") = Total: $" + total.toFixed(2);
+
+if (total > 30) {
+    mathResults += " (This total is greater than 30)";
+} else {
+    mathResults += " (This total is 30 or less)";
+}
+
+document.getElementById("mathOutput").textContent = mathResults;
