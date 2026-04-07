@@ -1,4 +1,5 @@
 # Comp484_Hw9 Kian Su
+ https://fin-al.github.io/Comp484_Hw9/
 Date: GetMonth(), getDate(), getYear()
 Number: Number(), Number.isNaN(), Number.isInteger(), toFixed()
 DOM: get ElementById(), textContent, innerHTML
