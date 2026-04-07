@@ -1,4 +1,4 @@
-# Comp484_Hw9
+# Comp484_Hw9 Kian Su
 Date: GetMonth(), getDate(), getYear()
 Number: Number(), Number.isNaN(), Number.isInteger(), toFixed()
 DOM: get ElementById(), textContent, innerHTML
